@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "176391662258",
+    "project_id": "dineojuet-61074",
+    "storage_bucket": "dineojuet-61074.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176391662258:android:bcd11ddfab64a4008af7ab",
+        "android_client_info": {
+          "package_name": "com.example.dineojuet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176391662258-tmbcbagce88ompt25lvbpn1a50g95scq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dineojuet",
+            "certificate_hash": "eb6f5ba0c9ab62805d1fc68aa1566573e9397a1e"
+          }
+        },
+        {
+          "client_id": "176391662258-mod89lv54pvk3hi5r3s5u2928tj1jf27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjNCjgG-BKDIGwcv17eqg94QMjv4V3XV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176391662258-mod89lv54pvk3hi5r3s5u2928tj1jf27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
