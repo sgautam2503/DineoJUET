@@ -1,4 +1,5 @@
-<<<<<<< Original<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools">
 
 <application
@@ -13,20 +14,6 @@ xmlns:tools="http://schemas.android.com/tools">
     tools:targetApi="31">
     <activity
         android:name=".LoginActivity"
-        android:exported="false">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-    </activity>
-    <activity
-        android:name=".MainActivity"
-        android:exported="false">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-    </activity>
-    <activity
-        android:name=".LoginActivity"
         android:exported="true">
         <meta-data
             android:name="android.app.lib_name"
@@ -39,26 +26,20 @@ xmlns:tools="http://schemas.android.com/tools">
         </intent-filter>
     </activity>
     <activity
-        android:name=".`MainActivity.java`"
+        android:name=".MainActivity"
         android:exported="true">
         <meta-data
             android:name="android.app.lib_name"
             android:value="" />
     </activity>
-</application>
 
-</manifest>=======
-
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-<application>
     <activity
         android:name="com.example.dineojuet.OtpVerification"
         android:exported="false"
-
         >
         <meta-data
             android:name="android.app.lib_name"
             android:value="" />
     </activity>
 </application>
-</manifest>>>>>>>> Added
+</manifest>
