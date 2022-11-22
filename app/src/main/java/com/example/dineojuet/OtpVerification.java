@@ -1,16 +1,24 @@
 package com.example.dineojuet;
 
+import static android.service.controls.ControlsProviderService.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseException;
+import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,7 +39,7 @@ public class OtpVerification extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth mAuth = ;
+                FirebaseAuth mAuth = null;
                 PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = null;
                 PhoneAuthOptions options =
                         PhoneAuthOptions.newBuilder(mAuth)
@@ -43,7 +51,7 @@ public class OtpVerification extends AppCompatActivity {
                 PhoneAuthProvider.verifyPhoneNumber(options);
             }
         });
-        mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+        PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
             @Override
             public void onVerificationCompleted(PhoneAuthCredential credential) {
@@ -57,6 +65,7 @@ public class OtpVerification extends AppCompatActivity {
 
                 signInWithPhoneAuthCredential(credential);
             }
+            
 
             @Override
             public void onVerificationFailed(FirebaseException e) {
@@ -75,15 +84,15 @@ public class OtpVerification extends AppCompatActivity {
 
             @Override
             public void onCodeSent(@NonNull String verificationId,
-                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
+                                   PhoneAuthProvider.@NonNull ForceResendingToken token) {
                 // The SMS verification code has been sent to the provided phone number, we
                 // now need to ask the user to enter the code and then construct a credential
                 // by combining the code with a verification ID.
                 Log.d(TAG, "onCodeSent:" + verificationId);
 
                 // Save verification ID and resending token so we can use them later
-                mVerificationId = verificationId;
-                mResendToken = token;
+                @NonNull String mVerificationId = verificationId;
+                PhoneAuthProvider.@NonNull ForceResendingToken mResendToken = token;
             }
         };
 
