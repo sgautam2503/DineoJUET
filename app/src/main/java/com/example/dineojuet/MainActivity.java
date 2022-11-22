@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.dineojuet.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(AuthResult authResult) {
                                 startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                                
                                 progressDialog.cancel();
 
                                 firebaseFirestore.collection("User")
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 progressDialog.cancel();
+                                Toast.makeText(MainActivity.this, e.getMessage(),Toast.LENGTH_SHORT).show();
                             }
                         });
             }

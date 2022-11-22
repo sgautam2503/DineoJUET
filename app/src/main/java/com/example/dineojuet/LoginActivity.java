@@ -1,5 +1,6 @@
 package com.example.dineojuet;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.view.View;
@@ -8,34 +9,41 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
+import com.example.dineojuet.databinding.ActivityLoginBinding;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
+public class LoginActivity extends AppCompatActivity {
+ActivityLoginBinding binding;
+FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        Button button =(Button)findViewById(R.id.login);
-        Button button1=(Button)findViewById(R.id.signingoogle);
-        final TextView Signup = (TextView) findViewById(R.id.signupinstead);
-        Signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Toast.makeText()
-                Intent i= new Intent(view.getContext(),MainActivity.class);
-            }
-        });
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               // Intent i=new Intent(getApplicationContext(),);
-            }
-        });
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               // Intent i=new Intent(getApplicationContext(),)
-            }
-        });
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
+        firebaseAuth=FirebaseAuth.getInstance();
+        binding.login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email=binding.EmailMobile.getText().toString().trim();
+                String password=binding.password.getText().toString();
+                firebaseAuth.signInWithEmailAndPassword(email,password)
+                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+                                Toast.makeText(LoginActivity.this, "Login Successful",Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(LoginActivity.this, e.getMessage(),Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
     }
 }
