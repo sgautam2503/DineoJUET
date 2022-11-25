@@ -14,7 +14,7 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="left"
         android:textSize="20dp"
-        android:text="You Are"
+        android:text="You Are :-"
         android:textColor="@color/teal_700"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

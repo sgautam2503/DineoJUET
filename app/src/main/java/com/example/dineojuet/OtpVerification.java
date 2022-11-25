@@ -1,4 +1,4 @@
-//package com.example.dineojuet;
+package com.example.dineojuet;
 //
 //import static android.service.controls.ControlsProviderService.TAG;
 //
@@ -43,7 +43,7 @@
 //                PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = null;
 //                PhoneAuthOptions options =
 //                        PhoneAuthOptions.newBuilder(mAuth)
-//                                .setPhoneNumber(Mobile)       // Phone number to verify
+//                                .setPhoneNumber(phoneNumber)       // Phone number to verify
 //                                .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
 //                                .setActivity(this)                 // Activity (for callback binding)
 //                                .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
@@ -69,7 +69,7 @@
 //
 //            @Override
 //            public void onVerificationFailed(FirebaseException e) {
-//                // This callback is invoked in an invalid request for verification is made,
+//                 // This callback is invoked in an invalid request for verification is made,
 //                // for instance if the the phone number format is not valid.
 //                Log.w(TAG, "onVerificationFailed", e);
 //
