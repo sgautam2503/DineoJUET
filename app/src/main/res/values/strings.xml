@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">DineOJUET</string>
+    <string name="activity_name">Navigation Drawer</string>
+    <!-- to toggle the open close button of the navigation drawer -->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="remove_from_cart">Remove from Cart</string>
+    <string name="proceed_to_checkout">Proceed to Checkout</string>
+    <string name="shopping_cart">Shopping Cart</string>
 </resources>
