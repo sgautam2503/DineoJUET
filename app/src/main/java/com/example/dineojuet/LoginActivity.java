@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,32 @@ FirebaseAuth firebaseAuth;
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        //login button
+        Button button=findViewById(R.id.login);
+        button.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), Home.class);
+
+            }
+        });
+        TextView signup=findViewById(R.id.signininstead);
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(getApplicationContext(),MainActivity.class);
+            }
+        });
+        Button button1=findViewById(R.id.signingoogle);
+        button1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), Home.class);
+
+            }
+        });
 
         firebaseAuth=FirebaseAuth.getInstance();
         binding.login.setOnClickListener(new View.OnClickListener() {

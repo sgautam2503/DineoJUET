@@ -17,16 +17,19 @@ public class AdminSelector extends AppCompatActivity {
         Window window=this.getWindow();
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        final Button button = (Button) findViewById(R.id.Student);
+        Button button =findViewById(R.id.Student);
 
         button.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-
+                openLoginActivity();
             }
         });
+
+    }
+    public void openLoginActivity(){
+        Intent i=new Intent(this,LoginActivity.class);
+        startActivity(i);
     }
 }
