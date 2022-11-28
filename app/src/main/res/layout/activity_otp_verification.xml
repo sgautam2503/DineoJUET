@@ -7,8 +7,7 @@
     android:padding="40dp"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".OtpVerification"
-    android:background="@drawable/backg_color">
+    tools:context=".OtpVerification">
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
