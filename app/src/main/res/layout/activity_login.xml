@@ -8,14 +8,14 @@
     android:layout_height="match_parent"
     android:gravity="center"
     tools:context=".LoginActivity"
-    android:background="@drawable/backg_color">
+    android:background="@color/background_yellow">
 
     <EditText
         android:id="@+id/EmailMobile"
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:background="@drawable/edittext_bg"
-        android:hint="Email/Mobile Numer"
+        android:hint="Email/Mobile Number"
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
     <EditText

@@ -1,24 +1,24 @@
 package com.example.dineojuet;
 public class UserModel {
-    private String fistname,lastname,email,enrol,password;
+    private String firstname,lastname,email,enrol,password;
 
     public UserModel(String firstname, String lastname, String email, String enrol, String password) {
     }
 
-    public UserModel(String fistname, String lastname, String number, String email, String enrol, String password) {
-        this.fistname = fistname;
+    public UserModel(String firstname, String lastname, String number, String email, String enrol, String password) {
+        this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.enrol = enrol;
         this.password = password;
     }
 
-    public String getFistname() {
-        return fistname;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFistname(String fistname) {
-        this.fistname = fistname;
+    public void setFirstname(String fistname) {
+        this.firstname = fistname;
     }
 
     public String getLastname() {
