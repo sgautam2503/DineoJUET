@@ -8,7 +8,12 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".AdminSelector">
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="54sp"
+        android:layout_marginBottom="200dp"/>
     <TextView
         android:id="@+id/YouAre"
         android:layout_marginTop="10dp"
