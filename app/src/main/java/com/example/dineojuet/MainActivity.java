@@ -15,15 +15,16 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
 
     FirebaseAuth firebaseAuth;
-
-    FirebaseFirestore firebaseFirestore;
     ProgressDialog progressDialog;
+    FirebaseFirestore firebaseFirestore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseFirestore=FirebaseFirestore.getInstance();
-
         progressDialog=new ProgressDialog(this);
 
         binding.signup.setOnClickListener(new View.OnClickListener(){
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(AuthResult authResult) {
                                 startActivity(new Intent(MainActivity.this,LoginActivity.class));
-                                
+                                Toast.makeText(MainActivity.this, "Your Account has been Created.", Toast.LENGTH_SHORT).show();
                                 progressDialog.cancel();
 
                                 firebaseFirestore.collection("User")
@@ -70,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
                                           }
 
         );
+
+        binding.signininstead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+
     }
     
 
