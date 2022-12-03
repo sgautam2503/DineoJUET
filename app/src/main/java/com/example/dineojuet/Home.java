@@ -25,25 +25,25 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         View drawerLayout = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle((Activity) this, (DrawerLayout) drawerLayout, R.string.nav_open, R.string.nav_close);
-
-        // pass the Open and Close toggle for the drawer layout listener
-        // to toggle the button
-        ((DrawerLayout) drawerLayout).addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-
-        // to make the Navigation drawer icon always appear on the action bar
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-
-    }
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle((Activity) this, (DrawerLayout) drawerLayout, R.string.nav_open, R.string.nav_close);
+//
+//        // pass the Open and Close toggle for the drawer layout listener
+//        // to toggle the button
+//        ((DrawerLayout) drawerLayout).addDrawerListener(actionBarDrawerToggle);
+//        actionBarDrawerToggle.syncState();
+//
+//        // to make the Navigation drawer icon always appear on the action bar
+//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+//
+//    }
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//
+//        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+  }
 
 
 }

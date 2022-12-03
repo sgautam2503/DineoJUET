@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".Home"
     android:background="#ffE9AC"
-
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
     <include
