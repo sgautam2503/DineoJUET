@@ -10,4 +10,7 @@
     <string name="last_name">Last Name</string>
     <string name="enter_otp_sent_on_your_mobile">Enter OTP Sent On Your Mobile</string>
     <string name="send_otp">Send OTP</string>
+    <string name="dineo_logo">DineO Logo</string>
+    <string name="juet_logo">Juet Logo</string>
+    <string name="you_are">You Are :-</string>
 </resources>

@@ -32,6 +32,8 @@ public class OtpVerification extends AppCompatActivity {
   private   String backendOTP;
   private FirebaseAuth mAuth;
   String phone;
+    ProgressBar progressBar;
+    ProgressBar progressBar1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +50,8 @@ public class OtpVerification extends AppCompatActivity {
         OTP6 = findViewById(R.id.OTP6);
         Verify = findViewById(R.id.OTP_verify);
 
-        ProgressBar progressBar = findViewById(R.id.progress_sendotp);
-        ProgressBar progressBar1 = findViewById(R.id.progress_verify);
+         progressBar = findViewById(R.id.progress_sendotp);
+         progressBar1 = findViewById(R.id.progress_verify);
 
         SendOtp.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ShowToast")
@@ -83,6 +85,9 @@ public class OtpVerification extends AppCompatActivity {
                             OTP4.getText().toString() +
                             OTP5.getText().toString() +
                             OTP6.getText().toString());
+                    progressBar.setVisibility(View.VISIBLE);
+                    SendOtp.setVisibility(View.INVISIBLE);
+
                 }
                 else {
                     Toast.makeText(OtpVerification.this, "Please Enter All No.", Toast.LENGTH_SHORT).show();
@@ -120,11 +125,15 @@ public class OtpVerification extends AppCompatActivity {
             @Override
             public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                 super.onCodeSent(s, forceResendingToken);
+                progressBar.setVisibility(View.GONE);
+                SendOtp.setVisibility(View.VISIBLE);
                 backendOTP = s;
             }
             @Override
             public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
                 final String code = phoneAuthCredential.getSmsCode();
+                progressBar.setVisibility(View.GONE);
+                SendOtp.setVisibility(View.VISIBLE);
 
                 if (code != null) {
                     verifyCode(code);
@@ -134,6 +143,8 @@ public class OtpVerification extends AppCompatActivity {
             @Override
             public void onVerificationFailed(FirebaseException e) {
                 Toast.makeText(OtpVerification.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
+                SendOtp.setVisibility(View.VISIBLE);
             }
         };
 
