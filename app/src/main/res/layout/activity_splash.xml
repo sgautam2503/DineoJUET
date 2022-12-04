@@ -3,15 +3,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_yellow">
+
         <View
             android:id="@+id/ellipse_1"
-            android:layout_width="657dp"
-            android:layout_height="498dp"
+            android:layout_width="656dp"
+            android:layout_height="375dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="-187dp"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="-187dp"
             android:layout_marginTop="-139dp"
-            android:background="@drawable/ellipse1"/>
+            android:background="@drawable/ellipse1" />
 
 
 
