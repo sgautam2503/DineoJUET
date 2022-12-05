@@ -1,6 +1,8 @@
 package com.example.dineojuet.Domain;
 
-public class MenuDomain {
+import java.io.Serializable;
+
+public class MenuDomain implements Serializable {
     private String title;
     private String pic;
     private String description;

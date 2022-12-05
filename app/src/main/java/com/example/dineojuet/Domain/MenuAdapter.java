@@ -1,4 +1,6 @@
 package com.example.dineojuet.Domain;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.dineojuet.R;
+import com.example.dineojuet.ShowDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -38,6 +41,15 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
         Glide.with(holder.itemView.getContext())
                 .load(drawableResorceFile)
                 .load(holder.pic);
+
+        holder.addonbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(holder.itemView.getContext(), ShowDetailsActivity.class);
+                intent.putExtra("object",menuDomains.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
