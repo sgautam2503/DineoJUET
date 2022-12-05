@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.dineojuet.Domain.CategoryAdapter;
 import com.example.dineojuet.Domain.CategoryDomain;
 import com.example.dineojuet.Domain.MenuAdapter;
 import com.example.dineojuet.Domain.MenuDomain;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.sql.Array;
 import java.util.ArrayList;
@@ -23,6 +26,18 @@ private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
         setContentView(R.layout.activity_food);
         recyclerViewCategory();
         recyleViewPopular();
+        bottomNavigationbar();
+    }
+
+    private void bottomNavigationbar(){
+        FloatingActionButton floatingActionButton=findViewById(R.id.cartBtn);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(FoodActivity.this, CartActivity.class));
+            }
+        });
     }
     private void recyclerViewCategory(){
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
@@ -51,4 +66,6 @@ private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
         adapter2=new MenuAdapter(foodlist);
         recyclerViewPopularList.setAdapter(adapter2);
     }
+
+
 }

@@ -32,10 +32,22 @@ public class ManagementCart {
         else{
             listFood.add(item);
         }
-        tinyDB.putListObject("Cardlist",listFood);
+        tinyDB.putListObject("Cartlist",listFood);
         Toast.makeText(context,"Added To Cart", Toast.LENGTH_SHORT).show();
     }
+
     public ArrayList<MenuDomain> getListCart(){
         return tinyDB.getListObject("CartList");
     }
+    public Double getTotalFee(){
+        ArrayList<MenuDomain> listFood=getListCart();
+        double fee=0;
+        for (int i=0;i<listFood.size();i++){
+            fee=fee+(listFood.get(i).getFee()+listFood.get(i).getNumberInCart());
+        }
+        return fee;
+    }
+
+
+
 }
