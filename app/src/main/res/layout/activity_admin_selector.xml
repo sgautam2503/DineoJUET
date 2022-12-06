@@ -19,14 +19,15 @@
         android:layout_marginStart="-187dp"
         android:layout_marginTop="-139dp"
         android:background="@drawable/ellipse1" />
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_marginTop="110dp"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:layout_marginTop="70dp"
         android:layout_weight="2"
-        app:srcCompat="@drawable/logo"
-        android:contentDescription="@string/dineo_logo" />
+        android:contentDescription="@string/dineo_logo"
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/YouAre"

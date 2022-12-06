@@ -37,13 +37,13 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull CartListAdapter.ViewHolder holder, int position) {
-    holder.title.setText(menuDomains.get(position).getTitle());
-    holder.feeEachItems.setText(String.valueOf(menuDomains.get(position).getFee()));
-    holder.totalEachItem.setText(String.valueOf(Math.round(menuDomains.get(position).getNumberInCart()*menuDomains.get(position).getFee()*100/100)));
-    holder.num.setText(String.valueOf(menuDomains.get(position).getNumberInCart()));
+        holder.title.setText(menuDomains.get(position).getTitle());
+        holder.feeEachItems.setText(String.valueOf(menuDomains.get(position).getFee()));
+        holder.totalEachItem.setText(String.valueOf(Math.round(menuDomains.get(position).getNumberInCart()*menuDomains.get(position).getFee()*100/100)));
+        holder.num.setText(String.valueOf(menuDomains.get(position).getNumberInCart()));
 
 
-    int drawableResourceId=holder.itemView.getContext().getResources().getIdentifier(menuDomains.get(position).getPic() ,"drawable",holder.itemView.getContext().getPackageName());
+        int drawableResourceId=holder.itemView.getContext().getResources().getIdentifier(menuDomains.get(position).getPic() ,"drawable",holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)

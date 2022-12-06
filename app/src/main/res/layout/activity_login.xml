@@ -8,12 +8,13 @@
     android:layout_height="match_parent"
     android:gravity="center"
     tools:context=".LoginActivity">
-    <TextView
-        android:layout_width="wrap_content"
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="54sp"
-        android:layout_marginBottom="165dp"/>
+        android:layout_marginBottom="100dp"
+        app:srcCompat="@drawable/dineo_logo" />
 
     <EditText
         android:id="@+id/EmailMobile"
