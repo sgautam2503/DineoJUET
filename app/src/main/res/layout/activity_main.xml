@@ -1,56 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
     android:gravity="center"
     android:orientation="vertical"
     android:background="@color/background_yellow"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/background_yellow">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/dineo_logo"
+            android:layout_gravity="center"
+
+            />
+
     <EditText
         android:id="@+id/firstname"
+        android:drawableStart="@drawable/ic_nav_user"
+        android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/edittext_bg"
-        android:hint="First Name"
+        android:hint="  First Name"
         android:padding="10dp" />
 
     <EditText
         android:id="@+id/lastname"
+        android:drawableStart="@drawable/ic_nav_user"
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:background="@drawable/edittext_bg"
-        android:hint="Last name"
+        android:hint="  Last name"
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:background="@drawable/edittext_bg"
-        android:hint="Email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+
+        <EditText
+            android:drawableStart="@drawable/ic_email"
+            android:id="@+id/email"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="  Email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
 
     <EditText
         android:id="@+id/enrol"
+        android:drawableStart="@drawable/ic_keyboard"
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:background="@drawable/edittext_bg"
-        android:hint="University Enrollment Number"
+        android:hint="  University Enrollment Number"
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
 
     <EditText
         android:id="@+id/password"
+        android:drawableStart="@drawable/passward"
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:background="@drawable/edittext_bg"
-        android:hint="Password"
+        android:hint="  Password"
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
@@ -71,5 +94,6 @@
         android:textColor="@color/teal_700"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
